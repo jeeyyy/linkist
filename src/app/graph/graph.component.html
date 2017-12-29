@@ -1,0 +1,33 @@
+<main class='graph-base'>
+    <header class="controls">
+        Dropdown and other controls goes here
+    </header>
+    <main id='GRAPH_CONTAINER'
+        class="graph-container">
+        <svg id='SVG_CONTAINER'
+            class="svg-container"
+            xmlns="http://www.w3.org/2000/svg"
+            width='100%'
+            height='100%'>
+            <!-- ALL PATHS FOR CONNECTIONS GETS INSERTED HERE -->
+        </svg>
+        <div class="column-container">
+            <div *ngFor='let column of data.nodes'
+                class='column'>
+                <div class="node-container">
+                    <div *ngFor='let node of column'
+                        class="node"
+                        id='NODE_ID_{{node.nodeId}}'
+                        appLinker='{{ node.parentNodeId ? "NODE_ID_" + node.parentNodeId : null}}'>
+                        <article class="node-base">
+                            {{node.name}}
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <nav class="timeline">
+        Timeline goes here
+    </nav>
+</main>

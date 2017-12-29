@@ -1,0 +1,94 @@
+app-graph {
+    flex: 1; // consume rest of the height
+    .graph-base {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        >header.controls {
+            background: whitesmoke;
+        }
+        >.graph-container {
+            height: 100%;
+            position: relative;
+            >svg.svg-container {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                z-index: 2;
+            }
+            .column-container {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                // flex every column inside it.
+                display: flex;
+                flex: 1;
+                align-items: stretch;
+                justify-content: space-between;
+                overflow: auto;
+                >div.column {
+                    display: block;
+                    width: 100%;
+                    &:first-child {
+                        width: 50%;
+                        .node-container {
+                            div.node {
+                                .node-base {
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+                    .node-container {
+                        display: block;
+                        height: 100%;
+                        // flex every node
+                        display: flex;
+                        flex-direction: column;
+                        flex: 1;
+                        align-items: stretch;
+                        justify-content: space-between;
+                        div.node {
+                            padding: 0;
+                            height: 100%;
+                            margin: 5px 0;
+                            position: relative;
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            svg {
+                                margin: 0;
+                                padding: 0;
+                                position: absolute;
+                                width: 0;
+                                height: 0;
+                            }
+                            .node-base {
+                                position: absolute;
+                                right: 0;
+                                left: 50%;
+                                top: 0;
+                                bottom: 0;
+                                background-color: #38393a;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        >nav.timeline {
+            background: whitesmoke;
+        }
+    }
+}
