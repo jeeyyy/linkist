@@ -22,7 +22,8 @@ export class DataService {
         "nodeId": "0",
         "parentNodeId": ""
       }],
-      [{
+      [
+        {
         "name": "Others",
         "type": "ASSET CLASS",
         "metaLabels": "",

@@ -9,6 +9,7 @@ import { GraphComponent } from './graph/graph.component';
 
 import { DataService} from './data.service';
 import { LinkerDirective } from './linker.directive';
+import { NodeParentChildCounterPipe } from './node-parent-child-counter.pipe';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LinkerDirective } from './linker.directive';
     HeaderComponent,
     FooterComponent,
     GraphComponent,
-    LinkerDirective
+    LinkerDirective,
+    NodeParentChildCounterPipe
   ],
   imports: [
     BrowserModule

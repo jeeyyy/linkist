@@ -1,13 +1,12 @@
 app-graph {
     flex: 1; // consume rest of the height
+    background: #e4e4e5;
     .graph-base {
         flex: 1;
         height: 100%;
         display: flex;
         flex-direction: column;
-        >header.controls {
-            background: whitesmoke;
-        }
+        >header.controls {}
         >.graph-container {
             height: 100%;
             position: relative;
@@ -19,7 +18,10 @@ app-graph {
                 top: 0;
                 bottom: 0;
                 right: 0;
-                z-index: 2;
+                path {
+                    stroke: #e4e4e5;
+                    stroke-width: 1px;
+                }
             }
             .column-container {
                 position: absolute;
@@ -58,25 +60,21 @@ app-graph {
                         div.node {
                             padding: 0;
                             height: 100%;
-                            margin: 5px 0;
+                            margin: 2px 0;
                             position: relative;
-                            &:first-child {
+                            b &:first-child {
                                 margin-top: 0;
                             }
                             &:last-child {
                                 margin-bottom: 0;
-                            }
-                            svg {
-                                margin: 0;
-                                padding: 0;
-                                position: absolute;
-                                width: 0;
-                                height: 0;
+                                .node-base {
+                                    border-bottom: none;
+                                }
                             }
                             .node-base {
                                 position: absolute;
                                 right: 0;
-                                left: 50%;
+                                left: 49.5%;
                                 top: 0;
                                 bottom: 0;
                                 background-color: #38393a;

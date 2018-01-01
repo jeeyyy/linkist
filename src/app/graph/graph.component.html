@@ -9,16 +9,23 @@
             xmlns="http://www.w3.org/2000/svg"
             width='100%'
             height='100%'>
+            <!-- FILL DEFINITION -->
+            <defs>
+                <linearGradient id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%"   stop-color="#EAA65A"/>
+                  <stop offset="100%" stop-color="#4EA8A7"/>
+                </linearGradient>
+              </defs>
             <!-- ALL PATHS FOR CONNECTIONS GETS INSERTED HERE -->
         </svg>
         <div class="column-container">
             <div *ngFor='let column of data.nodes'
                 class='column'>
                 <div class="node-container">
-                    <div *ngFor='let node of column'
+                    <div *ngFor='let node of column | nodeParentChildCounter'
                         class="node"
                         id='NODE_ID_{{node.nodeId}}'
-                        appLinker='{{ node.parentNodeId ? "NODE_ID_" + node.parentNodeId : null}}'>
+                        [appLinker]='node'>
                         <article class="node-base">
                             {{node.name}}
                         </article>
